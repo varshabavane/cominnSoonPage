@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ComingSoon</title>
+    <style>
+        body {
+            /* background-image: url(img/3.jpg); */
+            background-color: rgb(103, 221, 236);
+            width: 100%;
+            background-repeat: no-repeat;
+            /* background-size: cover; */
+            /* position: relative; */
+        }
+
+        h2 {
+            padding: 80px;
+            color: rgb(16, 63, 63);
+            font-size: 50px;
+        }
+
+        p {
+            padding-top: 100px;
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+    <script>
+        //date we're counting down to
+        var countDownDate = new Date("Mar 21, 2019 22:10:00").getTime();
+
+        //update the count down every second
+        var x = setInterval(function () {
+
+            //get todays date and time
+            var now = new Date().getTime()
+
+            //distance  between countdown date and current date
+            var distance = countDownDate - now;
+            document.getElementById("countDownTime").innerHTML = distance;
+
+            //time calculation for days hours,minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countDownTime").innerHTML = days + "days; " + hours + "hours;  " + minutes + "minutes; " + seconds + "seconds"
+
+        })
+    </script>
 </head>
+
 <body>
-    
+    <img src="img/1.jpg" style="height:50px; width:50px; border-top-right-radius:15px;">
+    <center>
+        <p>We are coming...............
+            <h2 id=countDownTime></h2>
+    </center>
 </body>
+
 </html>
